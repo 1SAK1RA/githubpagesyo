@@ -1,1 +1,187 @@
-<h1>Github pages</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Estadísticas del Sitio Web</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Panel de estadísticas del sitio web con rendimiento de las páginas de destino</h1>
+            <p class="description">
+            </p>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="chart-box">
+                <h2>Website Overview</h2>
+                <div class="metrics-row">
+                    <div class="metric">
+                        <span class="metric-label">Sessions</span>
+                        <span class="metric-value">5,497</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Users</span>
+                        <span class="metric-value">4,295</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">New Users</span>
+                        <span class="metric-value">3,878</span>
+                    </div>
+                </div>
+                <p class="chart-subtitle">Last 14 days, daily</p>
+                <canvas id="websiteOverviewChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h2>Landing Page</h2>
+                <p class="chart-subtitle">Last 14 days, daily</p>
+                <div class="doughnut-container">
+                    <canvas id="landingPageChart"></canvas>
+                    <div class="doughnut-center">
+                        <span class="doughnut-total">Total</span>
+                        <span class="doughnut-value">3,790</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-box">
+                <h2>Time on Site</h2>
+                <div class="metric-top-right">
+                    <span class="metric-label">Time on site</span>
+                    <span class="metric-value-large">184:43:45</span>
+                </div>
+                <p class="chart-subtitle">Last 14 days, daily</p>
+                <canvas id="timeOnSiteChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h2>Exit Page</h2>
+                <p class="chart-subtitle">Last 14 days, daily</p>
+                <div class="doughnut-container">
+                    <canvas id="exitPageChart"></canvas>
+                    <div class="doughnut-center">
+                        <span class="doughnut-total">Total</span>
+                        <span class="doughnut-value">3,757</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-box table-box">
+                <h2>Landing Page Performance</h2>
+                <p class="chart-subtitle">Last 14 days, daily</p>
+                <div class="table-container">
+                    <table id="landingPageTable">
+                        <thead>
+                            <tr>
+                                <th>Landing</th>
+                                <th>Session</th>
+                                <th>Users</th>
+                                <th>Bounce</th>
+                                <th>Time On Site</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Marketing</td>
+                                <td>1,018</td>
+                                <td>850</td>
+                                <td>36.00</td>
+                                <td>1:378</td>
+                            </tr>
+                            <tr>
+                                <td>Seo-Tips</td>
+                                <td>989</td>
+                                <td>731</td>
+                                <td>36.24</td>
+                                <td>2:233</td>
+                            </tr>
+                            <tr>
+                                <td>Offline-marketing</td>
+                                <td>266</td>
+                                <td>241</td>
+                                <td>33.00</td>
+                                <td>1:008</td>
+                            </tr>
+                            <tr>
+                                <td>About-us</td>
+                                <td>198</td>
+                                <td>171</td>
+                                <td>32.48</td>
+                                <td>1:383</td>
+                            </tr>
+                            <tr>
+                                <td>Home</td>
+                                <td>176</td>
+                                <td>168</td>
+                                <td>28.16</td>
+                                <td>1:298</td>
+                            </tr>
+                            <tr>
+                                <td>Marketing-services</td>
+                                <td>166</td>
+                                <td>90</td>
+                                <td>16.87</td>
+                                <td>1:293</td>
+                            </tr>
+                            <tr>
+                                <td>Content-writing</td>
+                                <td>149</td>
+                                <td>100</td>
+                                <td>21.03</td>
+                                <td>1:263</td>
+                            </tr>
+                            <tr>
+                                <td>Website-analytics</td>
+                                <td>118</td>
+                                <td>96</td>
+                                <td>22.41</td>
+                                <td>1:623</td>
+                            </tr>
+                            <tr>
+                                <td>Website-analytics</td>
+                                <td>113</td>
+                                <td>77</td>
+                                <td>17.86</td>
+                                <td>3:063</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="chart-box combined-box">
+                <div class="combined-section">
+                    <h2>Page Depth</h2>
+                    <div class="metric-top-right">
+                        <span class="metric-value-large">2.2</span>
+                    </div>
+                    <p class="chart-subtitle">Last 14 days</p>
+                    <canvas id="pageDepthChart"></canvas>
+                </div>
+                <div class="combined-section">
+                    <h2>Bounce Rate</h2>
+                    <div class="metric-top-right">
+                        <span class="metric-label">Bounce rate</span>
+                        <span class="metric-value-large">28.65</span>
+                    </div>
+                    <p class="chart-subtitle">Last 14 days, daily</p>
+                    <canvas id="bounceRateChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="disclaimer">
+                This graph/chart is linked to excel, and changes automatically based on data. 
+                Just left click on it and select "Edit Data".
+            </p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
